@@ -57,6 +57,7 @@ header nav div {
     display: inline-block;
     text-align: center;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 header nav div {
@@ -150,6 +151,7 @@ main .menu .menu-header i {
     font-size: 1.5rem;
     position: absolute;
     top: 1rem;
+    cursor: pointer;
 }
 
 main .cart .cart-header i {
