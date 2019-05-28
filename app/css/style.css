@@ -61,6 +61,10 @@ header nav div {
     cursor: pointer;
 }
 
+header nav span:nth-child(2) {
+    cursor: default;
+}
+
 header nav div {
     position: relative;
 }
@@ -130,7 +134,7 @@ main {
 
 main .cart,
 main .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 2;
     width: 70%;
@@ -225,6 +229,7 @@ main .container div .img-wrapper .add-to-cart {
     justify-content: flex-start;
     transform: translateX(100%);
     transition: all 0.3s linear;
+    cursor: pointer;
 }
 
 main .container div .img-wrapper .add-to-cart:hover {
@@ -291,8 +296,17 @@ footer span {
         left: 51%;
     }
 
+    header section h1 {
+        font-size: 2rem;
+    }
+
     header section button {
         padding: 2%;
+    }
+
+    main .cart,
+    main .menu {
+        width: 30vw;
     }
 
 }
