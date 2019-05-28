@@ -125,31 +125,49 @@ main {
     margin-top: 5rem;
 }
 
-main .cart {
+main .cart,
+main .menu {
     position: absolute;
     top: 0;
-    right: 0;
     z-index: 2;
     width: 70%;
     height: 100vh;
     background-color: #ccc;
-    transform: translateX(100%);
     transition: all .3s linear;
 }
 
-main .show-cart {
-    transform: translateX(0);
+main .cart {
+    right: 0;
+    transform: translateX(100%);
 }
 
 main .cart .cart-header {
     position: relative;
 }
 
-main .cart .cart-header i {
+main .cart .cart-header i,
+main .menu .menu-header i {
     font-size: 1.5rem;
     position: absolute;
     top: 1rem;
+}
+
+main .cart .cart-header i {
     right: 1rem;
+}
+
+main .menu {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+main .menu .menu-header i {
+    left: 1rem;
+}
+
+main .show-cart,
+main .show-menu {
+    transform: translateX(0);
 }
 
 main .container {
