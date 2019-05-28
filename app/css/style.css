@@ -25,6 +25,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
 /* header */
@@ -124,6 +125,7 @@ header section button:hover {
 
 main {
     margin-top: 5rem;
+    overflow: hidden;
 }
 
 main .cart,
@@ -132,7 +134,7 @@ main .menu {
     top: 0;
     z-index: 2;
     width: 70%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ccc;
     transition: all .3s linear;
 }
@@ -255,16 +257,42 @@ footer span {
 
 /* footer end */
 
-/* media query */
+/* media querys */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+    header nav div .cart-counter {
+        left: 52%;
+    }
+
+    header section button {
+        padding: 3%;
+    }
+
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+
+    header section button {
+        padding: 2%;
+    }
+
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+
+    header nav div .cart-counter {
+        left: 51%;
+    }
+
+    header section button {
+        padding: 2%;
+    }
+
+}
