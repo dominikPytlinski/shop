@@ -146,6 +146,7 @@ main .menu {
 main .cart {
     right: 0;
     transform: translateX(100%);
+    /* position: relative; */
 }
 
 main .cart .cart-header {
@@ -162,6 +163,46 @@ main .menu .menu-header i {
 
 main .cart .cart-header i {
     right: 1rem;
+}
+
+main .cart .cart-body .cart-item {
+    display: flex;
+    flex-direction: row;
+    margin: 60px 0 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 0.5rem 1rem;
+}
+
+main .cart .cart-body .cart-item .cart-item-counter {
+    display: flex;
+    flex-direction: column;
+}
+
+main .cart .cart-body .cart-item .cart-item-counter span {
+    font-size: 1.3rem;
+}
+
+main .cart .cart-body .cart-item .cart-item-counter span:first-child,
+main .cart .cart-body .cart-item .cart-item-counter span:last-child {
+    cursor: pointer;
+}
+
+main .cart .cart-body .cart-item img {
+    width: 5rem;
+    height: 5rem;
+}
+
+main .cart .cart-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 main .menu {
