@@ -1,2 +1,2 @@
 # shop
-# simple shopping cart app
+## simple shopping cart app
