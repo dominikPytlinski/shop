@@ -101,35 +101,64 @@ header section button:hover {
 /* main */
 
 main {
-    width: 100%;
+    margin-top: 5rem;
 }
 
 main .container {
-    width: 90%;
+    width: 90vw;
+    display: grid;
     margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
 }
 
 main .container div {
-    margin: 5% 0 0 0;
-    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-main .container div img {
+main .container div p,
+main .container div span {
+    text-align: center;
+}
+
+main .container div .img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+main .container div .img-wrapper:hover .add-to-cart {
+    transform: translateX(0);
+}
+
+main .container div .img-wrapper:hover img {
+    opacity: .5;
+}
+
+main .container div .img-wrapper img {
     max-width: 100%;
     height: auto;
 }
 
-main .container div p {
-    text-align: center;
-    padding: 2%;
+main .container div .img-wrapper .add-to-cart {
+    border: 1px solid var(--warning-color);
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: var(--warning-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    transform: translateX(100%);
+    transition: all 0.3s linear;
 }
 
-main .container div span {
-    letter-spacing: 2px;
-    color: var(--danger-color);
+main .container div .img-wrapper .add-to-cart span {
+    margin-left: 5rem;
 }
 
 /* main end */
