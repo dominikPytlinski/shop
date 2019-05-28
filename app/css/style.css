@@ -125,10 +125,6 @@ main {
     margin-top: 5rem;
 }
 
-main:hover .cart {
-    transform: translateX(0);
-}
-
 main .cart {
     position: absolute;
     top: 0;
@@ -139,6 +135,10 @@ main .cart {
     background-color: #ccc;
     transform: translateX(100%);
     transition: all .3s linear;
+}
+
+main .show-cart {
+    transform: translateX(0);
 }
 
 main .cart .cart-header {
