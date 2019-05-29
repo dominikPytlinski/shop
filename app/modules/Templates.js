@@ -46,6 +46,19 @@ export class Templates {
                 </div>
                 `;
                 break;
+
+            case 'menu':
+                return `
+                <div class="menu-header">
+                    <i class="fas fa-times" id="close-menu"></i>
+                </div>
+                <div class="menu-body">
+                    <ul>
+                        <li><i class="fas fa-user"></i><span>Zaloguj</span></li>
+                    </ul>
+                </div>
+                `;
+                break;
             
             default:
                 break;

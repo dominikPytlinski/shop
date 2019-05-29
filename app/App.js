@@ -1,4 +1,5 @@
 import { Templates } from './modules/Templates.js';
+import { Services } from './modules/Services.js';
 
 const Template = new Templates();
 
@@ -7,9 +8,8 @@ const cart = document.querySelector('#cart');
 
 const menuOpenBtn = document.querySelector('#menu-open');
 const menu = document.querySelector('#menu');
-const closeMenuBtn = document.querySelector('#close-menu');
-const container = document.querySelector('.container');
 
+const container = document.querySelector('.container');
 const curtain = document.querySelector('.curtain');
 
 export class App {
@@ -19,18 +19,11 @@ export class App {
         container.innerHTML = this.Layout('home');
 
         cartOpenBtn.addEventListener('click', e => {
-            this.openCart();
+            this.OpenCart();
         });
 
         menuOpenBtn.addEventListener('click', e => {
-            menu.classList.add('show-menu');
-            setTimeout(() => {
-                curtain.style.display = 'block';
-            }, 299);
-            closeMenuBtn.addEventListener('click', e => {
-                menu.classList.remove('show-menu');
-                curtain.style.display = 'none';
-            });
+            this.OpenMenu();
         });
     }
 
@@ -39,7 +32,7 @@ export class App {
         return Template.setLayout(name);
     }
 
-    openCart()
+    OpenCart()
     {
         cart.classList.add('show-cart');
         cart.innerHTML = this.Layout('cart');
@@ -52,6 +45,23 @@ export class App {
 
         closeCartBtn.addEventListener('click', e => {
             cart.classList.remove('show-cart');
+            curtain.style.display = 'none';
+        });
+    }
+
+    OpenMenu()
+    {
+        menu.classList.add('show-menu');
+        menu.innerHTML = this.Layout('menu');
+
+        setTimeout(() => {
+            curtain.style.display = 'block';
+        }, 299);
+
+        const closeMenuBtn = document.querySelector('#close-menu');
+
+        closeMenuBtn.addEventListener('click', e => {
+            menu.classList.remove('show-menu');
             curtain.style.display = 'none';
         });
     }
