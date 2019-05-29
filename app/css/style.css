@@ -214,6 +214,26 @@ main .menu .menu-header i {
     left: 1rem;
 }
 
+main .menu .menu-body {
+    margin: 60px 0 0 0;
+}
+
+main .menu .menu-body ul {
+    list-style-type: none;
+}
+
+main .menu .menu-body ul li {
+    text-align: center;
+    cursor: pointer;
+    padding: .5rem;
+    border-bottom: 1px solid #000;
+    background-color: #ddd;
+}
+
+main .menu .menu-body ul li span {
+    padding: 0 1rem;
+}
+
 main .show-cart,
 main .show-menu {
     transform: translateX(0);
