@@ -4,7 +4,7 @@ const Template = new Templates();
 
 const cartOpenBtn = document.querySelector('#cart-open');
 const cart = document.querySelector('#cart');
-const closeCartBtn = document.querySelector('#close-cart');
+
 const menuOpenBtn = document.querySelector('#menu-open');
 const menu = document.querySelector('#menu');
 const closeMenuBtn = document.querySelector('#close-menu');
@@ -16,17 +16,10 @@ export class App {
 
     constructor()
     {
-        this.Layout();
+        container.innerHTML = this.Layout('home');
 
         cartOpenBtn.addEventListener('click', e => {
-            cart.classList.add('show-cart');
-            setTimeout(() => {
-                curtain.style.display = 'block';
-            }, 299);
-            closeCartBtn.addEventListener('click', e => {
-                cart.classList.remove('show-cart');
-                curtain.style.display = 'none';
-            });
+            this.openCart();
         });
 
         menuOpenBtn.addEventListener('click', e => {
@@ -41,9 +34,26 @@ export class App {
         });
     }
 
-    Layout()
+    Layout(name)
     {
-        container.innerHTML = Template.setLayout('home');
+        return Template.setLayout(name);
+    }
+
+    openCart()
+    {
+        cart.classList.add('show-cart');
+        cart.innerHTML = this.Layout('cart');
+
+        setTimeout(() => {
+            curtain.style.display = 'block';
+        }, 299);
+
+        const closeCartBtn = document.querySelector('#close-cart');
+
+        closeCartBtn.addEventListener('click', e => {
+            cart.classList.remove('show-cart');
+            curtain.style.display = 'none';
+        });
     }
 
 }
