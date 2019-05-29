@@ -5,23 +5,34 @@ const menuOpenBtn = document.querySelector('#menu-open');
 const menu = document.querySelector('#menu');
 const closeMenuBtn = document.querySelector('#close-menu');
 
+const curtain = document.querySelector('.curtain');
+
 export class App {
 
     constructor()
     {
         cartOpenBtn.addEventListener('click', e => {
             cart.classList.add('show-cart');
+            setTimeout(() => {
+                curtain.style.display = 'block';
+            }, 299);
             closeCartBtn.addEventListener('click', e => {
                 cart.classList.remove('show-cart');
+                curtain.style.display = 'none';
             });
         });
 
         menuOpenBtn.addEventListener('click', e => {
             menu.classList.add('show-menu');
+            setTimeout(() => {
+                curtain.style.display = 'block';
+            }, 299);
             closeMenuBtn.addEventListener('click', e => {
                 menu.classList.remove('show-menu');
+                curtain.style.display = 'none';
             });
         });
     }
 
 }
+
