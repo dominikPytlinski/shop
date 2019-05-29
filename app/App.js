@@ -1,9 +1,14 @@
+import { Templates } from './modules/Templates.js';
+
+const Template = new Templates();
+
 const cartOpenBtn = document.querySelector('#cart-open');
 const cart = document.querySelector('#cart');
 const closeCartBtn = document.querySelector('#close-cart');
 const menuOpenBtn = document.querySelector('#menu-open');
 const menu = document.querySelector('#menu');
 const closeMenuBtn = document.querySelector('#close-menu');
+const container = document.querySelector('.container');
 
 const curtain = document.querySelector('.curtain');
 
@@ -11,6 +16,8 @@ export class App {
 
     constructor()
     {
+        this.Layout();
+
         cartOpenBtn.addEventListener('click', e => {
             cart.classList.add('show-cart');
             setTimeout(() => {
@@ -32,6 +39,11 @@ export class App {
                 curtain.style.display = 'none';
             });
         });
+    }
+
+    Layout()
+    {
+        container.innerHTML = Template.setLayout('home');
     }
 
 }
